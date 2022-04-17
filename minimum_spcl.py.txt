@@ -1,0 +1,59 @@
+ans = []
+i=0
+
+def count_special_character(string): 
+  
+    # Declaring variable for special characters 
+    special_char= 0
+   
+    for i in range(0, len(string)):  
+    # len(string) function to count the 
+    # number of characters in given string.
+      
+        ch = string[i]
+  
+        #.isalpha() function checks whether character 
+        #is alphabet or not.
+        if (string[i].isalpha()):  
+            continue
+        
+        #.isdigit() function checks whether character 
+        #is a number or not.
+        elif (string[i].isdigit()):
+            continue
+            
+        else: 
+            special_char += 1
+            
+    
+    
+    
+            
+    if special_char >= 0:    
+        print("String contains {} Special Character/s ".format(special_char))  
+#     else:
+#         print("There are no Special Characters in this String.")
+    return special_char
+
+  
+# Driver Code
+if __name__ == '__main__' : 
+    
+    ar = ["Mu%an","Mu#@%n","&us$*n","Mus**n","Mu@#an","Muskan"]
+    for i in range(len(ar)):
+        ans.insert(i,count_special_character(ar[i]))
+        
+#     print(ans)
+    
+    min = 0
+    idx = 0
+  
+    min  = ans[0]
+    for j in range(len(ans)):
+        
+        if(min>ans[j]):
+            min = ans[j]
+            idx = j
+            
+    
+    print(ar[idx])
